@@ -21,51 +21,52 @@
 
     <section id="about">
         <h2>О нас</h2>
-        <p>Мы предлагаем широкий ассортимент айфонов по лучшим ценам. Наш магазин работает с 2015 года, и мы гордимся тем, что наши клиенты всегда остаются довольны качеством обслуживания и скоростью доставки.</p>
+        <p>Мы предлагаем широкий ассортимент айфонов по лучшим ценам.</p>
     </section>
 
     <section id="products">
         <h2>Наши продукты</h2>
         <div class="product-list">
-            <div class="product" data-name="iPhone 14" data-price="65000">
+            <!-- Продукты -->
+            <div class="product" data-name="iPhone 14" data-price="650">
                 <img src="IPhone 14OJ.jpg" alt="iPhone 14">
                 <h3>iPhone 14</h3>
-                <p>Цена: 65 000 ₽</p>
+                <p>Цена: $650</p>
                 <button onclick="addToCart(this)">Добавить в корзину</button>
             </div>
 
-            <div class="product" data-name="iPhone 14 Pro" data-price="75000">
+            <div class="product" data-name="iPhone 14 Pro" data-price="750">
                 <img src="IPhone 14pro.jpg" alt="iPhone 14 Pro">
                 <h3>iPhone 14 Pro</h3>  
-                <p>Цена: 75 000 ₽</p>
+                <p>Цена: $750</p>
                 <button onclick="addToCart(this)">Добавить в корзину</button>
             </div>
 
-            <div class="product" data-name="iPhone 14 Pro Max" data-price="89900">
+            <div class="product" data-name="iPhone 14 Pro Max" data-price="899">
                 <img src="IPhone 14 Pro Max.webp" alt="iPhone 14 Pro">
                 <h3>iPhone 14 Pro Max</h3>
-                <p>Цена: 89 900 ₽</p>
+                <p>Цена: $899</p>
                 <button onclick="addToCart(this)">Добавить в корзину</button>
             </div>
 
-            <div class="product" data-name="iPhone 15" data-price="110000">
+            <div class="product" data-name="iPhone 15" data-price="1100">
                 <img src="IPhone 15.jpg" alt="iPhone 15">
                 <h3>iPhone 15</h3>
-                <p>Цена: 110 000 ₽</p>
+                <p>Цена: $1100</p>
                 <button onclick="addToCart(this)">Добавить в корзину</button>
             </div>
 
-            <div class="product" data-name="iPhone 15 Pro" data-price="125000">
+            <div class="product" data-name="iPhone 15 Pro" data-price="1250">
                 <img src="IPone 15 Pro.jpg" alt="iPhone 15 Pro">
                 <h3>iPhone 15 Pro</h3>
-                <p>Цена: 125 000 ₽</p>
+                <p>Цена: $1250</p>
                 <button onclick="addToCart(this)">Добавить в корзину</button>
             </div>
 
-            <div class="product" data-name="iPhone 15 Pro Max" data-price="140000">
+            <div class="product" data-name="iPhone 15 Pro Max" data-price="1400">
                 <img src="IPhone 15 Pro Max.jpg" alt="iPhone 15 Pro Max">
                 <h3>iPhone 15 Pro Max</h3>
-                <p>Цена: 140 000 ₽</p>
+                <p>Цена: $1400</p>
                 <button onclick="addToCart(this)">Добавить в корзину</button>
             </div>
         </div>
@@ -75,11 +76,13 @@
     <section id="cart">
         <h2>Корзина</h2>
         <ul id="cart-items"></ul>
-        <p id="total-price">Общая стоимость: <span>0</span> ₽</p>
+        <p id="total-price">Общая стоимость: $<span>0</span></p>
+
+        <!-- Форма для оформления заказа -->
         <form id="checkout-form" style="display:none;">
             <label for="address">Введите адрес доставки:</label><br/>
-            <input type="text" id="address" placeholder="Адрес доставки" required><br/><br/>
-            <button type="submit" id="checkout-button">Оформить заказ</button>
+            <input type="text" id="address" required><br/><br/>
+            <button type="submit">Оформить заказ</button>
         </form>
     </section>
 
@@ -88,7 +91,6 @@
         <h2>Контакты</h2>
         <p>Email: info@iphonestore.ru</p>
         <p>Телефон: +7 (123) 456-78-90</p>
-        <p>Адрес: г. Москва, ул. Тверская, д. 1</p>
     </section>
 
     <!-- Всплывающее уведомление -->
@@ -100,12 +102,6 @@
     </footer>
 
     <!-- Скрипт -->
-    <script>
-    </script>
-
-    <style>
-
-    </style>
-
+    <script src="script.js"></script>
 </body>
 </html>
