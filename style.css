@@ -5,17 +5,27 @@
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
         
         header {
-            background-color: #007bff;
+            background: linear-gradient(135deg, #007bff, #0056b3);
             color: white;
             padding: 1rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
         header h1 {
             margin: 0;
+            font-size: 2rem;
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff; }
+            to { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff; }
         }
         
         nav ul {
@@ -23,19 +33,44 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         
         nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: white;
+            bottom: -5px;
+            left: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
         }
         
         section {
             padding: 2rem;
             margin: 1rem auto;
             max-width: 1200px;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .product-list {
@@ -47,36 +82,68 @@
         .product {
             background-color: white;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 1rem;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        .product:hover {
-            transform: scale(1.05);
+        .product::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.3);
+            transform: scale(0);
+            transition: transform 0.5s ease;
+        }
+        
+        .product:hover::before {
+            transform: scale(1);
         }
         
         .product img {
             max-width: 100%;
-            height: auto;
+            height: 250px; /* Фиксированная высота */
+            object-fit: cover;
             border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .product:hover img {
+            transform: scale(1.05);
         }
         
         .product button {
-            background-color: #007bff;
+            background: linear-gradient(135deg, #007bff, #0056b3);
             color: white;
             border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        .product button:hover {
-            background-color: #0056b3;
-            transform: scale(1.1);
+        .product button::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(255,255,255,0.3);
+            top: 0;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .product button:hover::before {
+            width: 100%;
         }
         
         #cart-items {
@@ -91,76 +158,123 @@
             margin-bottom: 0.5rem;
             padding: 0.5rem;
             background-color: #f0f0f0;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
         
         #cart-items li:hover {
             background-color: #e0e0e0;
+            transform: scale(1.02);
         }
         
         .delete-btn {
-            background-color: #ff4d4d;
+            background: linear-gradient(135deg, #ff4d4d, #cc0000);
             color: white;
             border: none;
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         .delete-btn:hover {
-            background-color: #cc0000;
+            transform: scale(1.1);
         }
         
         #total-price {
             text-align: right;
             font-size: 1.2rem;
             margin-top: 1rem;
+            font-weight: bold;
         }
         
         #checkout-form input {
             width: 100%;
-            padding: 0.5rem;
+            padding: 0.7rem;
             margin-bottom: 1rem;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        #checkout-form input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px #007bff;
         }
         
         #checkout-button {
-            background-color: #28a745;
+            background: linear-gradient(135deg, #28a745, #218838);
             color: white;
             border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        #checkout-button:hover {
-            background-color: #218838;
-            transform: scale(1.1);
+        #checkout-button::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(255,255,255,0.3);
+            top: 0;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+        
+        #checkout-button:hover::before {
+            width: 100%;
         }
         
         .notification {
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #4caf50;
+            background: linear-gradient(135deg, #4caf50, #388e3c);
             color: white;
             padding: 1rem;
-            border-radius: 4px;
+            border-radius: 8px;
             opacity: 0;
             transform: translateY(-20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transition: all 0.5s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         
         footer {
-            background-color: #007bff;
+            background: linear-gradient(135deg, #007bff, #0056b3);
             color: white;
             text-align: center;
             padding: 1rem;
             position: relative;
             bottom: 0;
             width: 100%;
+        }
+        
+        .review {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .review blockquote {
+            font-style: italic;
+            margin: 0 0 0.5rem;
+        }
+        
+        .review cite {
+            font-style: normal;
+            display: block;
+            text-align: right;
+        }
+        
+        .review:hover {
+            transform: scale(1.02);
         }
