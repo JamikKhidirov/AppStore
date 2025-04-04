@@ -8,22 +8,30 @@
 </head>
 <body>
     <header>
-        <h1>AppStore</h1>
+        <h1 class="glow">AppStore</h1>
         <nav>
             <ul>
                 <li><a href="#about">О нас</a></li>
                 <li><a href="#products">Продукты</a></li>
                 <li><a href="#cart">Корзина (<span id="cart-count">0</span>)</a></li>
                 <li><a href="#contact">Контакты</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
             </ul>
         </nav>  
     </header>
-
+    
     <section id="about">
         <h2>О нас</h2>
-        <p>Мы предлагаем широкий ассортимент айфонов по лучшим ценам. Наш магазин работает с 2015 года, и мы гордимся тем, что наши клиенты всегда остаются довольны качеством обслуживания и скоростью доставки.</p>
+        <p>Мы предлагаем широкий ассортимент айфонов по лучшим ценам с 2015 года.</p>
+        <p>Наши преимущества:</p>
+        <ul>
+            <li>Гарантия подлинности</li>
+            <li>Быстрая доставка по всей России</li>
+            <li>Профессиональная консультация</li>
+            <li>Гибкая система скидок</li>
+        </ul>
     </section>
-
+    
     <section id="products">
         <h2>Наши продукты</h2>
         <div class="product-list">
@@ -31,81 +39,88 @@
                 <img src="IPhone 14OJ.jpg" alt="iPhone 14">
                 <h3>iPhone 14</h3>
                 <p>Цена: 65 000 ₽</p>
+                <p>6.1" дисплей, 128GB памяти</p>
                 <button onclick="addToCart(this)">Добавить в корзину</button>
             </div>
-
             <div class="product" data-name="iPhone 14 Pro" data-price="75000">
                 <img src="IPhone 14pro.jpg" alt="iPhone 14 Pro">
                 <h3>iPhone 14 Pro</h3>  
                 <p>Цена: 75 000 ₽</p>
+                <p>6.1" Super Retina XDR, 256GB памяти</p>
                 <button onclick="addToCart(this)">Добавить в корзину</button>
             </div>
-
             <div class="product" data-name="iPhone 14 Pro Max" data-price="89900">
-                <img src="IPhone 14 Pro Max.webp" alt="iPhone 14 Pro">
+                <img src="IPhone 14 Pro Max.webp" alt="iPhone 14 Pro Max">
                 <h3>iPhone 14 Pro Max</h3>
                 <p>Цена: 89 900 ₽</p>
+                <p>6.7" Super Retina XDR, 256GB памяти</p>
                 <button onclick="addToCart(this)">Добавить в корзину</button>
             </div>
-
             <div class="product" data-name="iPhone 15" data-price="110000">
                 <img src="IPhone 15.jpg" alt="iPhone 15">
                 <h3>iPhone 15</h3>
                 <p>Цена: 110 000 ₽</p>
+                <p>6.1" дисплей, 128GB памяти</p>
                 <button onclick="addToCart(this)">Добавить в корзину</button>
             </div>
-
             <div class="product" data-name="iPhone 15 Pro" data-price="125000">
                 <img src="IPone 15 Pro.jpg" alt="iPhone 15 Pro">
                 <h3>iPhone 15 Pro</h3>
                 <p>Цена: 125 000 ₽</p>
+                <p>6.1" Super Retina XDR, 256GB памяти</p>
                 <button onclick="addToCart(this)">Добавить в корзину</button>
             </div>
-
             <div class="product" data-name="iPhone 15 Pro Max" data-price="140000">
                 <img src="IPhone 15 Pro Max.jpg" alt="iPhone 15 Pro Max">
                 <h3>iPhone 15 Pro Max</h3>
                 <p>Цена: 140 000 ₽</p>
+                <p>6.7" Super Retina XDR, 512GB памяти</p>
                 <button onclick="addToCart(this)">Добавить в корзину</button>
             </div>
         </div>
     </section>
-
-    <!-- Корзина -->
+    
     <section id="cart">
         <h2>Корзина</h2>
         <ul id="cart-items"></ul>
         <p id="total-price">Общая стоимость: <span>0</span> ₽</p>
         <form id="checkout-form" style="display:none;">
-            <label for="address">Введите адрес доставки:</label><br/>
-            <input type="text" id="address" placeholder="Адрес доставки" required><br/><br/>
+            <label for="address">Адрес доставки:</label><br/>
+            <input type="text" id="address" placeholder="Введите адрес" required><br/><br/>
             <button type="submit" id="checkout-button">Оформить заказ</button>
         </form>
     </section>
-
-    <!-- Контакты -->
+    
     <section id="contact">
         <h2>Контакты</h2>
         <p>Email: info@iphonestore.ru</p>
         <p>Телефон: +7 (123) 456-78-90</p>
         <p>Адрес: г. Москва, ул. Тверская, д. 1</p>
     </section>
-
-    <!-- Всплывающее уведомление -->
+    
+    <section id="reviews">
+        <h2>Отзывы клиентов</h2>
+        <div class="review">
+            <blockquote>"Отличный магазин! Быстрая доставка и качественный товар."</blockquote>
+            <cite>- Иван Петров</cite>
+        </div>
+        <div class="review">
+            <blockquote>"Покупаю здесь уже второй раз, все очень нравится!"</blockquote>
+            <cite>- Мария Сидорова</cite>
+        </div>
+    </section>
+    
     <div id="notification" class="notification"></div>
-
-    <!-- Подвал -->
+    
     <footer>
         <p>&copy; 2025 Магазин Айфонов. Все права защищены.</p>
     </footer>
-
-    <!-- Скрипт -->
+    
     <script src="script.js">
+
     </script>
-
+    
     <style>
-
     </style>
-
 </body>
 </html>
